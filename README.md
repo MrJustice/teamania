@@ -1,0 +1,2 @@
+# teamania
+bsuir project
