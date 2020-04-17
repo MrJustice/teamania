@@ -1,2 +1,5 @@
-# teamania
-bsuir project
+# Teamania
+
+ - Киселёв Артём
+ - Группа: 753501
+ - Тема: Чайная база
