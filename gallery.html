@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a href="#" class="header__logo">
+        <img src="img/logo220.png" alt="">
+      </a>
+      <div class="header__bottom">
+        <nav>          
+          <a href="#" class="header__button">Green tea</a>
+          <a href="#" class="header__button">Black tea</a>
+          <a href="#" class="header__button">Other</a>
+          <input type="search" placeholder="Search">
+        </nav>
+        <div class="header__user__menu">
+          <a href="#" class="header__button">Log In</a>
+          <a href="#" class="login__logo">
+              <img src="img/login.png" alt="login">
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="contaier">
+
+      <form action="post">
+        <div class="select__tea">
+          <p>Type of tea</p>
+          <input type="checkbox" id="green" name="green" value="Green">
+          <label for="green">Green</label>
+          <input type="checkbox" id="black" name="black" value="Black">
+          <label for="black">Black</label>
+          <input type="checkbox" id="other" name="other" value="Other">
+          <label for="other">Other</label>
+        </div>
+        <div class="select__country">
+          <p>Country</p>
+          <input type="checkbox" id="china" name="china" value="china">
+          <label for="china">China</label>
+          <input type="checkbox" id="india" name="india" value="india">
+          <label for="india">India</label>
+          <input type="checkbox" id="other" name="other" value="Other">
+          <label for="other">Other</label>
+        </div>
+        <div class="select__price">
+          <p>Price</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        </div>
+      </form>
+
+      <section class="gallery__section">
+        <h2>Search results:</h2>
+        <ul id="search-results">
+          <li id="search-item">
+            <a href="">
+              <img>
+              <p class="tea__fullname">Name</p>
+              <p class="tea__type">Type</p>
+            </a>
+            <div class="tea__info">
+              <p class="tea__stats">Country</p>
+              <p class="tea__stats">Rating</p>
+              <p class="tea__stats">Price</p>
+              <p class="tea__description">Description</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+</body>
+
+</html>
