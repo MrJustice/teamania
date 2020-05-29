@@ -3,7 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/gallery_style.css">
   <title>Gallery</title>
 </head>
 
@@ -11,68 +14,106 @@
 
   <header>
     <div class="container">
-      <a href="#" class="header__logo">
-        <img src="img/logo220.png" alt="">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo_desctop.png" alt="">
       </a>
       <div class="header__bottom">
         <nav>          
-          <a href="#" class="header__button">Green tea</a>
-          <a href="#" class="header__button">Black tea</a>
-          <a href="#" class="header__button">Other</a>
-          <input type="search" placeholder="Search">
-        </nav>
-        <div class="header__user__menu">
-          <a href="#" class="header__button">Log In</a>
-          <a href="#" class="login__logo">
-              <img src="img/login.png" alt="login">
+          <a href="index.html" class="header__button">Home</a>
+          <a href="gallery.html" class="header__button">Gallery</a>
+          <a href="#" class="header__search">
+            <img src="img/search_desctop.png" alt="search">
           </a>
+          <!-- <input type="search" placeholder="Search"> -->
+        </nav>
+        <div class="header__login">
+          <a href="#" class="header__button">Log In</a>
+          <!-- <a href="#" class="login__logo">
+              <img src="img/login.png" alt="login">
+          </a> -->
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="contaier">
+    <div class="container">
 
       <form action="post">
         <div class="select__tea">
           <p>Type of tea</p>
-          <input type="checkbox" id="green" name="green" value="Green">
-          <label for="green">Green</label>
-          <input type="checkbox" id="black" name="black" value="Black">
-          <label for="black">Black</label>
-          <input type="checkbox" id="other" name="other" value="Other">
-          <label for="other">Other</label>
+          <div class="tea__categories">
+            <input type="checkbox" id="green" name="green" value="Green">
+            <label for="green">Green</label>
+            <input type="checkbox" id="black" name="black" value="Black">
+            <label for="black">Black</label>
+            <input type="checkbox" id="other" name="other" value="Other">
+            <label for="other">Other</label>
+          </div>
         </div>
         <div class="select__country">
           <p>Country</p>
-          <input type="checkbox" id="china" name="china" value="china">
-          <label for="china">China</label>
-          <input type="checkbox" id="india" name="india" value="india">
-          <label for="india">India</label>
-          <input type="checkbox" id="other" name="other" value="Other">
-          <label for="other">Other</label>
+          <div class="country__list">
+            <input type="checkbox" id="china" name="china" value="china">
+            <label for="china">China</label>
+            <input type="checkbox" id="india" name="india" value="india">
+            <label for="india">India</label>
+            <input type="checkbox" id="other" name="other" value="Other">
+            <label for="other">Other</label>
+          </div>
         </div>
-        <div class="select__price">
-          <p>Price</p>
-          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <div class="select__min__price">
+          <p>Min price</p>
+          <div class="price__slider">
+            <input type="range" class="slider" min="0" max="20" value="0">
+            <!-- <input type="range" min="0" max="100" value="25" id="input-left">
+            <input type="range" min="0" max="100" value="75" id="input-right">
+
+            <div class="slider">
+              <div class="track"></div>
+              <div class="range"></div>
+              <div class="thumb left"></div>
+              <div class="thumb right"></div>
+            </div> -->
+          </div>
+        </div>
+        <div class="select__max__price">
+          <p>Max price</p>
+          <div class="price__slider">
+            <input type="range" class="slider" min="0" max="20" value="20">
+            <!-- <input type="range" min="0" max="100" value="25" id="right">
+            <input type="range" min="0" max="100" value="75" id="input-right">
+
+            <div class="slider">
+              <div class="track"></div>
+              <div class="range"></div>
+              <div class="thumb left"></div>
+              <div class="thumb right"></div>
+            </div> -->
+          </div>
         </div>
       </form>
 
       <section class="gallery__section">
-        <h2>Search results:</h2>
+        <h2 class="headline">Search results:</h2>
         <ul id="search-results">
-          <li id="search-item">
-            <a href="">
-              <img>
-              <p class="tea__fullname">Name</p>
-              <p class="tea__type">Type</p>
-            </a>
+          <li class="tea__card">
+            <div class="tea__image">
+              <img src="img/blacktea.png" alt="spring melody">
+            </div>
+            <div class="tea__name"><a href="#">Greenfield Spring melody</a></div>
+            <div class="tea__rating">Rating: 4.5</div>
+            <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
             <div class="tea__info">
-              <p class="tea__stats">Country</p>
-              <p class="tea__stats">Rating</p>
-              <p class="tea__stats">Price</p>
-              <p class="tea__description">Description</p>
+              <div class="tea__stats country">
+                <p>England</p>
+              </div>
+              <div class="tea__stats categoty">
+                <p>Black tea</p>
+              </div>
+              <div class="tea__stats price">
+                <p>2$</p>
+              </div>
             </div>
           </li>
         </ul>
@@ -80,6 +121,46 @@
     </div>
   </main>
 
+  <script>
+
+    var inputLeft = document.getElementById("input-left");
+    var inputRight = document.getElementById("input-right");
+
+    var thumbLeft = document.querySelector(".slider > .thumb.left");
+    var thumbRight = document.querySelector(".slider > .thumb.right");
+    var range = document.querySelector(".slider > .range");
+
+    function setLeftValue() {
+      var _this = inputLeft,
+      min = parseInt(_this.min),
+      max = parseInt(_this.max);
+
+      _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+      var percent = ((_this.value - min) / (max - min)) * 100;
+
+      thumbLeft.style.left = percent + "%";
+      range.style.left = percent + "%";
+    }
+    setLeftValue();
+
+    function setRightValue() {
+      var _this = inputRight,
+      min = parseInt(_this.min),
+      max = parseInt(_this.max);
+
+      _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+      var percent = ((_this.value - min) / (max - min)) * 100;
+
+      thumbRight.style.right = (100 - percent) + "%";
+      range.style.right = (100 - percent) + "%";
+    }
+    setRightValue();
+
+    inputLeft.addEventListener("input", setLeftValue);
+    inputRight.addEventListener("input", setRightValue);
+  </script>
 </body>
 
 </html>
