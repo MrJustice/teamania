@@ -82,7 +82,6 @@ form {
     justify-content: space-between;
     width: 100%;
     margin-top: 3%;
-    padding: 0 1%;
     border: 2px solid #004643;
     border-radius: 40px;
 }
@@ -95,40 +94,38 @@ form div p {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 25%;
+    width: 33.3%;
     padding-bottom: 1%;
     font-size: 18px;
     color: #001e1d;
 }
 
 .select__tea {
-    padding-right: 1%;
     border-right: 2px solid #004643;
 }
 
-.select__min__price {
+.select__country {
     border-left: 2px solid #004643;
-    border-right: 2px solid #001e1d;
-}
-
-.select__max__price {
-    padding-left: 1%;
 }
 
 .tea__categories, .country__list, .price__slider {
     color: #0f3433
 }
 
-.slider {
+/* .slider {
     -webkit-appearance: none;
     width: 80%;
     height: 30%;
     background-color: #004643;
     border-radius: 5px;
     outline: none;
+} */
+
+.price__slider {
+    position: relative;
 }
 
-/* .slider {
+.slider {
     position: relative;
     z-index: 1;
     height: 10px;
@@ -143,7 +140,7 @@ form div p {
     right: 0;
     bottom: 0;
     border-radius: 5px;
-    background-color: #004643;
+    background-color: #f9bc60;
 }
 
 .slider > .range {
@@ -154,7 +151,7 @@ form div p {
     top: 0;
     bottom: 0;
     border-radius: 5px;
-    background-color: #f9bc60;
+    background-color: #004643;
 }
 
 .slider > .thumb {
@@ -163,7 +160,7 @@ form div p {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: #f9bc60;
+    background-color: #004643;
     opacity: .5;
 }
 
@@ -179,11 +176,14 @@ form div p {
 
 input[type=range] {
     position: absolute;
+    left: 6%;
     pointer-events: none;
     -webkit-appearance: none;
     z-index: 2;
     height: 10px;
     width: 88%;
+    margin: 0;
+    opacity: 0;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -194,7 +194,7 @@ input[type=range]::-moz-range-thumb {
     border: 0 none;
     background-color: red;
     -webkit-appearance: none;
-} */
+}
 
 .headline {
     display: flex;
@@ -303,16 +303,18 @@ input[type=range]::-moz-range-thumb {
 
     .select__tea {
         order: 1;
-    }
-
-    .select__min__price {
-        order: 2;
-        border: 0;
+        border-right: 0;
+        border-bottom: 2px solid #001e1d;
     }
 
     .select__country {
+        order: 2;
+        border-bottom: 2px solid #001e1d;
+    }
+    
+    .select__price {
         order: 3;
-        border-right: 2px solid #001e1d;
+        margin: 0 auto;
     }
 
     .select__max__price {
