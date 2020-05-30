@@ -3,29 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Example tea</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/single_style.css">
+  <title>Greenfield black tea</title>
 </head>
 
 <body>
 
   <header>
     <div class="container">
-      <a href="#" class="header__logo">
-        <img src="img/logo220.png" alt="">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo_desctop.png" alt="">
       </a>
       <div class="header__bottom">
+        <div class="header__burger"><span></span></div>
         <nav>          
-          <a href="#" class="header__button">Green tea</a>
-          <a href="#" class="header__button">Black tea</a>
-          <a href="#" class="header__button">Other</a>
-          <input type="search" placeholder="Search">
-        </nav>
-        <div class="header__user__menu">
-          <a href="#" class="header__button">Log In</a>
-          <a href="#" class="login__logo">
-              <img src="img/login.png" alt="login">
+          <a href="index.html" class="header__button" data-text="Home">Home</a>
+          <a href="gallery.html" class="header__button" data-text="Gallery">Gallery</a>
+          <a href="#" class="header__search">
+            <img src="img/search_desctop.png" alt="search">
           </a>
+          <!-- <input type="search" placeholder="Search"> -->
+        </nav>
+        <div class="header__login">
+          <a href="#" class="header__button">Log In</a>
+          <!-- <a href="#" class="login__logo">
+              <img src="img/login.png" alt="login">
+          </a> -->
         </div>
       </div>
     </div>
@@ -33,32 +40,93 @@
 
   <main>
     <div class="container">
+
       <section class="tea__section">
         <div class="main__information">
-          <img>
-          <p class="tea__fullname">Name</p>
-          <p class="tea__type">Type</p>
-          <p class="tea__stats">Country</p>
-          <p class="tea__stats">Rating</p>
-          <p class="tea__stats">Price</p>
+          <div class="tea__image">
+            <img src="img/blacktea.png" alt="spring melody">
+          </div>
+          <div class="tea__info">
+            <p class="tea__name">Greenfield Spring melody</p>
+            <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
+            <div class="tea__stats">
+              <!-- <ul class="tea__info__headers">
+                <li class="tea__categoty">Category:</li>
+                <li class="tea__country">Country:</li>
+                <li class="tea__rating">Rating:</li>
+                <li class="tea__price">Price:</li>
+              </ul>
+              <ul class="tea__info__values">
+                <li class="tea__categoty">Black tea</li>
+                <li class="tea__country">England</li>
+                <li class="tea__rating">4.5</li>
+                <li class="tea__price">2$</li>
+              </ul> -->
+              <table>
+                <tr>
+                  <th>Category</th>
+                  <th>Country</th>
+                  <th>Rating</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td>Black tea</td>
+                  <td>England</td>
+                  <td>4.5</td>
+                  <td>2$</td>
+                </tr>
+              </table>
+            </div>
+          </div>
         </div>
-        <p class="tea__description">Description</p>
       </section>
+      
       <section class="feedback__section">
         <div class="comment__section">
           <ul id="comment-list">
             <li id="comment-item">
               <div class="comment">
-                <p class="comment__author">Author:</p>
-                <p class="comment__text">Comment</p>
+                <div class="comment__author">Kiselev Artem:</div>
+                <div class="comment__text">Well, its pretty tasty.</div>
               </div>
+              <div class="comment__rating">R: 4.5</div>
+            </li>
+            <li id="comment-item">
+              <div class="comment">
+                <div class="comment__author">Kiselev Artem:</div>
+                <div class="comment__text">Well, its pretty tasty.</div>
+              </div>
+              <div class="comment__rating">R: 4.5</div>
+            </li>
+            <li id="comment-item">
+              <div class="comment">
+                <div class="comment__author">Kiselev Artem:</div>
+                <div class="comment__text">Well, its pretty tasty.</div>
+              </div>
+              <div class="comment__rating">R: 4.5</div>
             </li>
           </ul>
         </div>
         <div class="rating__section">
-          <h3>Rating</h3>
+          <div class="average">
+            <div id="average-rating">Rating: 4.5</div>
+            <div id="average-stars">
+            </div>
+          </div>
+          <div class="your__rating">
+            <div id="self-rating">Add your own rating</div>
+            <div id="self-stars">
+              <input type="radio" name="star" id="star1"><label for="star1"></label>
+              <input type="radio" name="star" id="star2"><label for="star2"></label>
+              <input type="radio" name="star" id="star3"><label for="star3"></label>
+              <input type="radio" name="star" id="star4"><label for="star4"></label>
+              <input type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
+          </div>
+
         </div>
       </section>
+
     </div>
   </main>
 
