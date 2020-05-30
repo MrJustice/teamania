@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/index_style.css">
   <title>Teamania</title>
 </head>
@@ -28,7 +29,7 @@
           <!-- <input type="search" placeholder="Search"> -->
         </nav>
         <div class="header__login">
-          <a href="#" class="header__button">Log In</a>
+          <a href="#" class="header__button" id="login">Log In</a>
           <!-- <a href="#" class="login__logo">
               <img src="img/login.png" alt="login">
           </a> -->
@@ -36,6 +37,19 @@
       </div>
     </div>
   </header>
+
+  <div class="popup">
+    <div id="popup-content">
+      <img src="img/login.svg" alt="User">
+      <input type="text" placeholder="Username">
+      <input type="text" placeholder="Password">
+      <div class="popup__buttons">
+        <a href="#" class="login__button">Login</a>
+        <a href="#" class="registration__button">Registration</a>
+      </div>
+      <div class="close">+</div>
+    </div>
+  </div>
 
   <main>
     <div class="container">
@@ -339,6 +353,7 @@
     </div>
   </main>
 
+  <script src="js/login.js"></script>
 </body>
 
 </html>
