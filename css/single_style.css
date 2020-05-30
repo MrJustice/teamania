@@ -134,6 +134,10 @@ main .container {
     text-align: center;
 }
 
+.tea__stats table th {
+    width: 33.3%;
+}
+
 .tea__stats table tr:last-child {
     color: #004643;
 }
