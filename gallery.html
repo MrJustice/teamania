@@ -40,7 +40,7 @@
     <div class="container">
 
       <form action="post">
-        <div class="select__tea">
+        <div class="form__section select__tea">
           <p>Type of tea</p>
           <div class="tea__categories">
             <input type="checkbox" id="green" name="green" value="Green">
@@ -51,7 +51,7 @@
             <label for="other">Other</label>
           </div>
         </div>
-        <div class="select__country">
+        <div class="form__section select__country">
           <p>Country</p>
           <div class="country__list">
             <input type="checkbox" id="china" name="china" value="china">
@@ -62,7 +62,7 @@
             <label for="other">Other</label>
           </div>
         </div>
-        <div class="select__min__price">
+        <div class="form__section select__min__price">
           <p>Min price</p>
           <div class="price__slider">
             <input type="range" class="slider" min="0" max="20" value="0">
@@ -77,19 +77,10 @@
             </div> -->
           </div>
         </div>
-        <div class="select__max__price">
+        <div class="form__section select__max__price">
           <p>Max price</p>
           <div class="price__slider">
             <input type="range" class="slider" min="0" max="20" value="20">
-            <!-- <input type="range" min="0" max="100" value="25" id="right">
-            <input type="range" min="0" max="100" value="75" id="input-right">
-
-            <div class="slider">
-              <div class="track"></div>
-              <div class="range"></div>
-              <div class="thumb left"></div>
-              <div class="thumb right"></div>
-            </div> -->
           </div>
         </div>
       </form>
@@ -116,51 +107,69 @@
               </div>
             </div>
           </li>
+          <li class="tea__card">
+            <div class="tea__image">
+              <img src="img/blacktea.png" alt="spring melody">
+            </div>
+            <div class="tea__name"><a href="#">Greenfield Spring melody</a></div>
+            <div class="tea__rating">Rating: 4.5</div>
+            <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
+            <div class="tea__info">
+              <div class="tea__stats country">
+                <p>England</p>
+              </div>
+              <div class="tea__stats categoty">
+                <p>Black tea</p>
+              </div>
+              <div class="tea__stats price">
+                <p>2$</p>
+              </div>
+            </div>
+          </li>
+          <li class="tea__card">
+            <div class="tea__image">
+              <img src="img/blacktea.png" alt="spring melody">
+            </div>
+            <div class="tea__name"><a href="#">Greenfield Spring melody</a></div>
+            <div class="tea__rating">Rating: 4.5</div>
+            <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
+            <div class="tea__info">
+              <div class="tea__stats country">
+                <p>England</p>
+              </div>
+              <div class="tea__stats categoty">
+                <p>Black tea</p>
+              </div>
+              <div class="tea__stats price">
+                <p>2$</p>
+              </div>
+            </div>
+          </li>
+          <li class="tea__card">
+            <div class="tea__image">
+              <img src="img/blacktea.png" alt="spring melody">
+            </div>
+            <div class="tea__name"><a href="#">Greenfield Spring melody</a></div>
+            <div class="tea__rating">Rating: 4.5</div>
+            <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
+            <div class="tea__info">
+              <div class="tea__stats country">
+                <p>England</p>
+              </div>
+              <div class="tea__stats categoty">
+                <p>Black tea</p>
+              </div>
+              <div class="tea__stats price">
+                <p>2$</p>
+              </div>
+            </div>
+          </li>
         </ul>
       </section>
     </div>
   </main>
 
-  <script>
-
-    var inputLeft = document.getElementById("input-left");
-    var inputRight = document.getElementById("input-right");
-
-    var thumbLeft = document.querySelector(".slider > .thumb.left");
-    var thumbRight = document.querySelector(".slider > .thumb.right");
-    var range = document.querySelector(".slider > .range");
-
-    function setLeftValue() {
-      var _this = inputLeft,
-      min = parseInt(_this.min),
-      max = parseInt(_this.max);
-
-      _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
-
-      var percent = ((_this.value - min) / (max - min)) * 100;
-
-      thumbLeft.style.left = percent + "%";
-      range.style.left = percent + "%";
-    }
-    setLeftValue();
-
-    function setRightValue() {
-      var _this = inputRight,
-      min = parseInt(_this.min),
-      max = parseInt(_this.max);
-
-      _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
-
-      var percent = ((_this.value - min) / (max - min)) * 100;
-
-      thumbRight.style.right = (100 - percent) + "%";
-      range.style.right = (100 - percent) + "%";
-    }
-    setRightValue();
-
-    inputLeft.addEventListener("input", setLeftValue);
-    inputRight.addEventListener("input", setRightValue);
-  </script>
+  <script src="js/slider.js"></script>
 </body>
 
 </html>

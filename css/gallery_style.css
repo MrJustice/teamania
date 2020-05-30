@@ -91,11 +91,11 @@ form div p {
     font-size: 22px;
 }
 
-.select__tea, .select__country, .select__min__price, .select__max__price {
+.form__section {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 33.3%;
+    width: 25%;
     padding-bottom: 1%;
     font-size: 18px;
     color: #001e1d;
@@ -126,15 +126,6 @@ form div p {
     background-color: #004643;
     border-radius: 5px;
     outline: none;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 30%;
-    height: 50%;
-    border-radius: 50%;
-    border: 0 none;
-    background-color: #f9bc60;
 }
 
 /* .slider {
@@ -301,10 +292,140 @@ input[type=range]::-moz-range-thumb {
     .container {
         max-width: 750px;
     }
+
+    form {
+        flex-wrap: wrap;
+    }
+
+    .form__section {
+        width: 50%;
+    }
+
+    .select__tea {
+        order: 1;
+    }
+
+    .select__min__price {
+        order: 2;
+        border: 0;
+    }
+
+    .select__country {
+        order: 3;
+        border-right: 2px solid #001e1d;
+    }
+
+    .select__max__price {
+        order: 4;
+    }
+
+    .tea__card {
+        width: 45%;
+        margin-right: 10%;
+        margin-bottom: 5%;
+    }
+
+    .tea__card:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .tea__name a {
+        font-size: 24px;
+        color: #fffffe;
+    }
+
+    .tea__rating {
+        font-size: 22px;
+        padding-top: 1%;
+    }
+
+    .tea__description {
+        width: 90%;
+        margin: auto;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 1%;
+    }
+
+    .tea__info {
+        font-size: 20px;
+    }
 }
 
 @media (max-width:767px) {
     .container {
         max-width: none;
+    }
+
+    .header__logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__bottom {
+        flex-direction: row-reverse;
+    }
+    nav {
+        flex-direction: row-reverse;
+    }
+
+    .header__button  {
+        margin-left: 10px;
+    }
+
+    .header__login {
+        position: relative;
+        z-index: 4;
+    }
+
+    form {
+        width: 94%;
+        margin: 3% auto 0;
+    }
+
+    .headline {
+        font-size: 40px;
+        margin-bottom: 2%;
+    }
+
+    #top-five-results {
+        flex-direction: column;
+    }
+    
+    .tea__card {
+        display: block;
+        width: 94%;
+        margin: 3% auto;
+        background-color: #004643;
+    }
+
+    .tea__card:nth-child(even) {
+        margin: 3% auto;
+    }
+
+    .tea__card:last-child {
+        margin: 3% auto 0% ;
+    }
+
+    .tea__name a {
+        font-size: 28px;
+        color: #fffffe;
+    }
+
+    .tea__rating {
+        font-size: 26px;
+        padding-top: 1%;
+    }
+
+    .tea__description {
+        width: 80%;
+        margin: auto;
+        font-size: 24px;
+        line-height: 20px;
+        padding: 1%;
+    }
+
+    .tea__info {
+        font-size: 24px;
     }
 }
