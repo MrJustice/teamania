@@ -69,9 +69,8 @@ nav a:hover::after, .header__login a:hover::after {
     z-index: 100;
 }
 
-#popup-content,
-#comment-popup {
-    display: none;
+#popup-content {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -83,12 +82,6 @@ nav a:hover::after, .header__login a:hover::after {
     border-radius: 20px;
     position: relative;
     animation: slideUp .3s ease-in-out;
-}
-
-#comment-popup {
-    width: 400px;
-    height: 200px;
-    font-size: 20px;
 }
 
 #popup-content img {
@@ -126,8 +119,7 @@ nav a:hover::after, .header__login a:hover::after {
 
 #login-button,
 #registration-button,
-#reg-complete,
-#comment-button {
+#reg-complete {
     color: #004643;
     border: 0;
     background: none;
@@ -143,14 +135,10 @@ nav a:hover::after, .header__login a:hover::after {
     right: 0;
 }
 
-#comment-button {
-    margin-top: 5%;
-}
 
 #login-button::after,
 #registration-button::after,
-#reg-complete::after,
-#comment-button::after {
+#reg-complete::after {
     content: '';
     display: block;
     width: 0;
@@ -162,18 +150,11 @@ nav a:hover::after, .header__login a:hover::after {
 
 #login-button:hover::after,
 #registration-button:hover::after,
-#reg-complete:hover::after, 
-#comment-button:hover::after {
+#reg-complete:hover::after{
     width: 100%;
 }
 
-#comment-popup textarea {
-    margin-top: 5%;
-    border-radius: 5px;
-    resize: none;
-}
-#close-login,
-#close-comment {
+#close-login {
     position: absolute;
     top: 1%;
     right: 1%;
@@ -181,7 +162,6 @@ nav a:hover::after, .header__login a:hover::after {
     transform: rotate(45deg);
     cursor: pointer;
 }
-
 
 body {
     height: 100%;
@@ -192,6 +172,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #abd1c6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .container {
@@ -218,128 +204,125 @@ main .container {
 .main__information {
     display: flex;
     justify-content: flex-start;
+    margin: 1%;
 }
 
-.tea__image {
-    margin-top: 1%;
-    margin-left: 1%;
+#tea-image {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+    overflow: hidden;
+    position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #004643;
+    background: none;
+    text-align: center;
+}
+
+.inputfile + label::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    margin-top: 3px;
+    background-color: #004643;
+    transition: width .3s;
+}
+
+.inputfile:focus + label:hover::after,
+.inputfile + label:hover::after {
+    width: 100%;
+}
+
+.inputfile + label {
+	cursor: pointer;
+}
+
+#tea-image img {
+    text-align: center;
+    padding-top: 2%;
+    position: relative;
 }
 
 .tea__info {
+    width: 60%;
     display: flex;
-    width: 80%;
     flex-direction: column;
 }
 
-.tea__name {
-    text-align: center;
-    padding-top: 2%;
-    font-size: 40px;
-}
-
-.tea__description {
-    width: 90%;
-    text-indent: 5%;
-    line-height: 22px;
-    font-size: 24px;
-    margin: 3% auto 1%;
-    padding-bottom: 1%;
-    color: #0f3433;
-}
-
-.tea__stats table {
-    width: 90%;
-    margin: 1% auto;
-    font-size: 26px;
-    text-align: start;
-}
-
-.tea__stats table tr {
-    text-align: center;
-}
-
-.tea__stats table th {
-    width: 33.3%;
-}
-
-.tea__stats table tr td {
-    padding-top: 1%;
-}
-
-
-
-.tea__stats table tr:last-child {
-    color: #004643;
-}
-
-.feedback__section {
-    display: flex;
-    width: 100%;
-    height: 35%;
+.tea__info div {
+    margin-left: 7%;
     margin-bottom: 3%;
-    border: 4px solid #004643;
+    border-radius: 5px;
 }
 
-.comment__section {
-    width: 80%;
-    border-right: 4px solid #004643;
+.tea__info div label {
+    color: #004643;
+    font-size: 18px;
 }
 
-#comment-list li {
-    display: flex;
-    justify-content: space-between;
-    width: 98%;
-    margin: 1.5% auto;
-    padding: 1% 2%;
+.tea__info div input[type="text"] {
+    background: none;
     font-size: 20px;
-    border-radius: 20px;
+    padding: .5% 1%;
+    border: none;
+    border-bottom: 3px solid #004643;
+}
+
+.tea__info div input[type="text"]:focus {
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #f9bc60, #004643);
+}
+
+#tea-description {
+    margin: 1%;
+}
+
+#tea-description textarea {
+    width: 100%;
+    font-size: 20px;
+    border-radius: 15px;
     border: 2px solid #004643;
+    background-color:#abd1c6;
+    padding: 2%;
+    resize: none;
 }
 
-.comment {
+#tea-rating {
     display: flex;
-}
-
-.rating__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 20%;
-    text-align: center;
-}
-
-#average-rating {
-    font-size: 28px;
-}
-
-#self-rating {
-    font-size: 20px;
-}
-
-#self-stars {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
+    justify-content: flex-end;
     position: relative;
     transform: rotateY(180deg);
 }
 
-#self-stars input {
+#tea-rating input {
     display: none;
 }
 
-#self-stars label {
+#tea-rating label {
     display: block;
     cursor: pointer;
-    width: 10%;
-    margin-right: 2%;
+    width: 5%;
+    margin-right: .5%;
 }
 
-#self-stars label:last-child {
+#tea-rating label:last-child {
     margin-right: 0;
 }
 
-#self-stars label::before {
+#tea-rating label::before {
     content: '\f005';
     font-family: fontAwesome;
     position: relative;
@@ -347,7 +330,7 @@ main .container {
     font-size: 24px;
 }
 
-#self-stars label::after {
+#tea-rating label::after {
     content: '\f005';
     font-family: fontAwesome;
     position: absolute;
@@ -360,39 +343,48 @@ main .container {
     text-shadow: 0 2px 5px #004643;
 }
 
-#self-stars label:hover::after,
-#self-stars label:hover ~ label:after,
-#self-stars input:checked ~ label:after {
+#tea-rating label:hover::after,
+#tea-rating label:hover ~ label:after,
+#tea-rating input:checked ~ label:after {
     opacity: 1;
+}
+
+#complete-button {
+    color: #004643;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to left, green, #eec50e);
+    background-size: 300% 300%;
+    cursor: pointer;
+    height: 50px;
+    text-transform: capitalize;
+    width: 20%;
+    font-size: 18px;
+    margin: 0 auto 1%;
+}
+
+#complete-button:hover {
+    color: #fff;
+    border-image-slice: 1;
+    /* border-image-source: linear-gradient(to left, #f9bc60, #abd1c6 , #004643); */
+    animation: gradient 2s ease infinite;
+}
+
+@keyframes gradient { 
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
 }
 
 @media (max-width:1200px) {
     .container {
         max-width: 970px;
     }
-
-    .tea__name {
-        padding-top: 3%;
-    }
-
-    #self-stars label:not(:last-child) {
-        margin-right: 3%;
-    }
 }
 
 @media (max-width:992px) {
     .container {
         max-width: 750px;
-    }
-
-    .tea__name {
-        font-size: 32px;
-        line-height: 28px;
-        padding-top: 3%;
-    }
-
-    #self-stars label:not(:last-child) {
-        margin-right: 7%;
     }
 }
 
@@ -410,53 +402,12 @@ main .container {
         flex-direction: row-reverse;
     }
 
-    .header__button  {
-        margin-left: 10px;
-    }
-
     .header__login {
         position: relative;
         z-index: 4;
     }
 
-    .main__information {
-        flex-direction: column;
-    }
-
-    .tea__image, .tea__info {
-        width: 100%;
-    }
-
-    .tea__image {
-        margin: 1%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .feedback__section {
-        flex-direction: column;
-    }
-
-    .comment__section {
-        width: 100%;
-        order: 2;
-        border-right: 0;
-        border-top: 4px solid #004643;
-    }
-
-    .rating__section {
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
-    }
-
-    .your__rating {
-        display: flex;
-        align-items: baseline;
-        padding-bottom: 1%;
-    }
-
-    #self-stars label:not(:last-child) {
-        margin-right: 7%;
+    #tea-rating label {
+        width: 15%;
     }
 }

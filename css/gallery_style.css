@@ -483,9 +483,6 @@ input[type=range]::-moz-range-thumb {
     .header__bottom {
         flex-direction: row-reverse;
     }
-    nav {
-        flex-direction: row-reverse;
-    }
 
     .header__button  {
         margin-left: 10px;

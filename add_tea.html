@@ -2,57 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add new tea</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/addtea_style.css">
+  <title>Add new tea</title>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <a href="#" class="header__logo">
-        <img src="img/logo220.png" alt="">
+      <a href="index.html" class="header__logo">
+        <img src="img/logo_desctop.png" alt="">
       </a>
       <div class="header__bottom">
+        <div class="header__burger"><span></span></div>
         <nav>          
-          <a href="#" class="header__button">Green tea</a>
-          <a href="#" class="header__button">Black tea</a>
-          <a href="#" class="header__button">Other</a>
-          <input type="search" placeholder="Search">
+          <a href="index.html" class="header__button">Home</a>
+          <a href="gallery.html" class="header__button">Gallery</a>
+          <a href="add_tea.html" class="header__button">Add tea</a>
         </nav>
-        <div class="header__user__menu">
-          <a href="#" class="header__button">Log In</a>
-          <a href="#" class="login__logo">
-              <img src="img/login.png" alt="login">
-          </a>
+        <div class="header__login">
+          <a href="#" class="header__button" id="login">Log In</a>
         </div>
       </div>
     </div>
   </header>
 
+  <div class="popup">
+    <div id="popup-content">
+      <img src="img/login.svg" alt="User">
+      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Username">
+      <input type="text" placeholder="Password">
+      <label for="">Registration complete</label>
+      <div class="popup__buttons">
+        <button id="login-button"><span>log in</span></button>
+        <button id="registration-button"><span>sign up</span></button>
+        <button id="reg-complete"><span>complete</span></button>
+      </div>
+      <div id="close-login">+</div>
+    </div>
+    </div>
+  </div>
+
   <main>
     <div class="container">
       <section class="tea__section">
-        <form action="post">
-          <input type="file" name="image"><br>
-          <label for="name">Name: </label>
-          <input name="name"><br>
-          <label for="type">Type: </label>
-          <input name="type"><br>
-          <label for="country">Country: </label>
-          <input name="country"><br>
-          <label for="price">Price: </label>
-          <input type="number" name="price"><br>
-          <p>Stars rating</p>
-          <label for="description">Description: </label>
-          <input name="description"><br>
-          <label for="comment">Comment: </label>
-          <input name="comment"><br>
-        </form>
+        <div class="main__information">
+          <div id="tea-image">
+            <input type="file" class="inputfile" id="file" onchange="previewFile()">
+            <label for="file">Upload the image</label>
+            <img id="input-file" src="" height="200" alt="Image preview...">
+          </div>
+          <div class="tea__info">
+            <div id="tea-name">
+              <label for="">Name</label><br>
+              <input type="text">
+            </div>
+            <div id="tea-category">
+              <label for="">Category</label><br>
+              <input type="text">
+            </div>
+            <div id="tea-country">
+              <label for="">Country</label><br>
+              <input type="text">
+            </div>
+            <div id="tea-price">
+              <label for="">Price</label><br>
+              <input type="text">
+            </div>
+            <div id="tea-rating">
+              <input type="radio" name="star" id="star1"><label for="star1"></label>
+              <input type="radio" name="star" id="star2"><label for="star2"></label>
+              <input type="radio" name="star" id="star3"><label for="star3"></label>
+              <input type="radio" name="star" id="star4"><label for="star4"></label>
+              <input type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
+          </div>
+        </div>
+        <div id="tea-description">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+        </div>
+
+        <button id="complete-button"><span>Add to gallery</span></button>
       </section>
+
     </div>
   </main>
 
+  <script src="js/login.js"></script>
+  <script src="js/uploadimage.js"></script>
 </body>
 
 </html>
