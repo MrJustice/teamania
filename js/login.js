@@ -1,11 +1,13 @@
 document.getElementById('login').addEventListener('click',
 function() {
     document.querySelector('.popup').style.display = 'flex';
+    document.querySelector('#popup-content').style.display = 'flex';
 });
 
-document.querySelector('.close').addEventListener('click',
+document.querySelector('#close-login').addEventListener('click',
 function() {
     document.querySelector('.popup').style.display = 'none';
+    document.querySelector('#popup-content').style.display = 'none';
 });
 
 document.getElementById('registration-button').addEventListener('click',

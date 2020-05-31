@@ -20,14 +20,12 @@
       <div class="header__bottom">
         <div class="header__burger"><span></span></div>
         <nav>          
-          <a href="index.html" class="header__button" data-text="Home">Home</a>
-          <a href="gallery.html" class="header__button" data-text="Gallery">Gallery</a>
+          <a href="index.html" class="header__button">Home</a>
+          <a href="gallery.html" class="header__button">Gallery</a>
+          <a href="add_tea.html" class="header__button">Add tea</a>
         </nav>
         <div class="header__login">
           <a href="#" class="header__button" id="login">Log In</a>
-          <!-- <a href="#" class="login__logo">
-              <img src="img/login.png" alt="login">
-          </a> -->
         </div>
       </div>
     </div>
@@ -41,11 +39,12 @@
       <input type="text" placeholder="Password">
       <label for="">Registration complete</label>
       <div class="popup__buttons">
-        <a href="#" id="login-button">log in</a>
-        <a href="#" id="registration-button">sign up</a>
-        <a href="#" id="reg-complete">complete</a>
+        <button id="login-button"><span>log in</span></button>
+        <button id="registration-button"><span>sign up</span></button>
+        <button id="reg-complete"><span>complete</span></button>
       </div>
-      <div class="close">+</div>
+      <div id="close-login">+</div>
+    </div>
     </div>
   </div>
 
@@ -53,7 +52,7 @@
     <div class="container">
 
       <section class="top__five">
-        <h2 class="headline">Top 5</h2>
+        <h2 class="headline">Top rated</h2>
         <ul id="top-five-results">
           <li class="tea__card">
             <div class="tea__image">
@@ -154,7 +153,7 @@
       </section>
 
       <section class="last-ten">
-        <h2 class="headline">Last 10</h2>
+        <h2 class="headline">Recently added</h2>
         <ul id="last-ten-results">
           <li class="tea__card">
             <div class="tea__image">

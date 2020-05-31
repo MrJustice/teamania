@@ -69,8 +69,9 @@ nav a:hover::after, .header__login a:hover::after {
     z-index: 100;
 }
 
-#popup-content {
-    display: flex;
+#popup-content,
+#comment-popup {
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -84,13 +85,19 @@ nav a:hover::after, .header__login a:hover::after {
     animation: slideUp .3s ease-in-out;
 }
 
+#comment-popup {
+    width: 400px;
+    height: 200px;
+    font-size: 20px;
+}
+
 #popup-content img {
     object-fit: cover;
     width: 90px;
     height: 90px;
 }
 
-#popup-content input {
+#popup-content input[type="text"] {
     margin-top: 3%;
     width: 60%;
     padding: 8px;
@@ -98,7 +105,7 @@ nav a:hover::after, .header__login a:hover::after {
     border-radius: 10px;
 }
 
-#popup-content input:nth-child(2) {
+#popup-content input[type="text"]:nth-child(2) {
     display: none;
 }
 
@@ -119,9 +126,14 @@ nav a:hover::after, .header__login a:hover::after {
 
 #login-button,
 #registration-button,
-#reg-complete {
+#reg-complete,
+#comment-button {
     color: #004643;
+    border: 0;
+    background: none;
     cursor: pointer;
+    height: 50px;
+    text-transform: capitalize;
 }
 
 #reg-complete {
@@ -131,10 +143,14 @@ nav a:hover::after, .header__login a:hover::after {
     right: 0;
 }
 
+#comment-button {
+    margin-top: 5%;
+}
 
 #login-button::after,
 #registration-button::after,
-#reg-complete::after {
+#reg-complete::after,
+#comment-button::after {
     content: '';
     display: block;
     width: 0;
@@ -146,18 +162,26 @@ nav a:hover::after, .header__login a:hover::after {
 
 #login-button:hover::after,
 #registration-button:hover::after,
-#reg-complete:hover::after{
+#reg-complete:hover::after, 
+#comment-button:hover::after {
     width: 100%;
 }
 
-.close {
+#comment-popup textarea {
+    margin-top: 5%;
+    border-radius: 5px;
+    resize: none;
+}
+#close-login,
+#close-comment {
     position: absolute;
-    top: .5%;
-    right: .5%;
+    top: 1%;
+    right: 1%;
     font-size: 60px;
     transform: rotate(45deg);
     cursor: pointer;
 }
+
 
 body {
     height: 100%;

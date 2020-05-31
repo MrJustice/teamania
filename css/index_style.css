@@ -90,7 +90,7 @@ nav a:hover::after, .header__login a:hover::after {
     height: 90px;
 }
 
-#popup-content input {
+#popup-content input[type="text"] {
     margin-top: 3%;
     width: 60%;
     padding: 8px;
@@ -98,7 +98,7 @@ nav a:hover::after, .header__login a:hover::after {
     border-radius: 10px;
 }
 
-#popup-content input:nth-child(2) {
+#popup-content input[type="text"]:nth-child(2) {
     display: none;
 }
 
@@ -121,7 +121,11 @@ nav a:hover::after, .header__login a:hover::after {
 #registration-button,
 #reg-complete {
     color: #004643;
+    border: 0;
+    background: none;
     cursor: pointer;
+    height: 50px;
+    text-transform: capitalize;
 }
 
 #reg-complete {
@@ -150,10 +154,10 @@ nav a:hover::after, .header__login a:hover::after {
     width: 100%;
 }
 
-.close {
+#close-login {
     position: absolute;
-    top: .5%;
-    right: .5%;
+    top: 1%;
+    right: 1%;
     font-size: 60px;
     transform: rotate(45deg);
     cursor: pointer;
