@@ -5,12 +5,17 @@ var thumbLeft = document.querySelector(".slider > .thumb.left");
 var thumbRight = document.querySelector(".slider > .thumb.right");
 var range = document.querySelector(".slider > .range");
 
+var minValue = document.getElementById("min");
+var maxValue = document.getElementById("max");
+
 function setLeftValue() {
   var _this = inputLeft,
   min = parseInt(_this.min),
   max = parseInt(_this.max);
 
   _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+  minValue.textContent = "Min: " + _this.value;
 
   var percent = ((_this.value - min) / (max - min)) * 100;
 
@@ -25,6 +30,8 @@ function setRightValue() {
   max = parseInt(_this.max);
 
   _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+  maxValue.textContent = "Max: " + _this.value;
 
   var percent = ((_this.value - min) / (max - min)) * 100;
 

@@ -125,6 +125,14 @@ form div p {
     position: relative;
 }
 
+.price__labels {
+    display: flex;
+    /* flex-direction: column; */
+    width: 92%;
+    margin: 1.5% auto 0;
+    justify-content: space-between;
+}
+
 .slider {
     position: relative;
     z-index: 1;
@@ -140,7 +148,8 @@ form div p {
     right: 0;
     bottom: 0;
     border-radius: 5px;
-    background-color: #f9bc60;
+    background-color: #004643;
+    opacity: .5;
 }
 
 .slider > .range {
@@ -161,7 +170,11 @@ form div p {
     height: 22px;
     border-radius: 50%;
     background-color: #004643;
-    opacity: .5;
+    opacity: 1;
+}
+
+.slider > .thumb:hover{
+    box-shadow: 0 0 0 1px #fff;
 }
 
 .slider > .thumb.left {
