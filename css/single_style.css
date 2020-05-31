@@ -42,7 +42,7 @@ nav {
     margin-right: 0;
 }
 
-nav a:not(:last-child)::after, .header__login a::after {
+nav a::after, .header__login a::after {
     content: '';
     display: block;
     width: 0;
@@ -52,12 +52,111 @@ nav a:not(:last-child)::after, .header__login a::after {
     transition: width .3s;
 }
 
-nav a:not(:last-child):hover::after, .header__login a:hover::after {
+nav a:hover::after, .header__login a:hover::after {
     width: 100%;
 }
 
-.header__search {
-    margin-left: 25px;
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 100;
+}
+
+#popup-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    border: 1px solid #004643;
+    background-color: #abd1c6;
+    padding: 2% 5% 10%;
+    border-radius: 20px;
+    position: relative;
+    animation: slideUp .3s ease-in-out;
+}
+
+#popup-content img {
+    object-fit: cover;
+    width: 90px;
+    height: 90px;
+}
+
+#popup-content input {
+    margin-top: 3%;
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #004643;
+    border-radius: 10px;
+}
+
+#popup-content input:nth-child(2) {
+    display: none;
+}
+
+#popup-content label {
+    display: none;
+    margin-top: 1%;
+    color: green;
+}
+
+.popup__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 5%;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#login-button,
+#registration-button,
+#reg-complete {
+    color: #004643;
+    cursor: pointer;
+}
+
+#reg-complete {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+#login-button::after,
+#registration-button::after,
+#reg-complete::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    margin-top: 3px;
+    background-color: #004643;
+    transition: width .3s;
+}
+
+#login-button:hover::after,
+#registration-button:hover::after,
+#reg-complete:hover::after{
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    top: .5%;
+    right: .5%;
+    font-size: 60px;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
 
 body {

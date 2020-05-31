@@ -42,7 +42,7 @@ nav {
     margin-right: 0;
 }
 
-nav a:not(:last-child)::after, .header__login a::after {
+nav a::after, .header__login a::after {
     content: '';
     display: block;
     width: 0;
@@ -52,24 +52,21 @@ nav a:not(:last-child)::after, .header__login a::after {
     transition: width .3s;
 }
 
-nav a:not(:last-child):hover::after, .header__login a:hover::after {
+nav a:hover::after, .header__login a:hover::after {
     width: 100%;
-}
-
-.header__search {
-    margin-left: 25px;
 }
 
 .popup {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
     display: none;
+    z-index: 100;
 }
 
 #popup-content {
@@ -77,14 +74,14 @@ nav a:not(:last-child):hover::after, .header__login a:hover::after {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 30%;
-    height: 40%;
+    width: 500px;
+    height: 350px;
     border: 1px solid #004643;
     background-color: #abd1c6;
     padding: 2% 5% 10%;
-    position: absolute;
     border-radius: 20px;
-    z-index: 999;
+    position: relative;
+    animation: slideUp .3s ease-in-out;
 }
 
 #popup-content img {
@@ -101,17 +98,56 @@ nav a:not(:last-child):hover::after, .header__login a:hover::after {
     border-radius: 10px;
 }
 
+#popup-content input:nth-child(2) {
+    display: none;
+}
+
+#popup-content label {
+    display: none;
+    margin-top: 1%;
+    color: green;
+}
+
 .popup__buttons {
     display: flex;
     justify-content: space-between;
     width: 60%;
     margin-top: 5%;
+    text-transform: uppercase;
+    position: relative;
 }
-.login__button, .registration__button {
-    padding: 3% 10%;
+
+#login-button,
+#registration-button,
+#reg-complete {
+    color: #004643;
+    cursor: pointer;
+}
+
+#reg-complete {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+#login-button::after,
+#registration-button::after,
+#reg-complete::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 4px;
+    margin-top: 3px;
     background-color: #004643;
-    color: #f9bc60;
-    border-radius: 20px;
+    transition: width .3s;
+}
+
+#login-button:hover::after,
+#registration-button:hover::after,
+#reg-complete:hover::after{
+    width: 100%;
 }
 
 .close {
@@ -147,7 +183,8 @@ body {
     color: #001e1d;
 }
 
-#top-five-results, #last-ten-results {
+#top-five-results,
+#last-ten-results {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -231,6 +268,17 @@ body {
 
 .price {
     border-left: 3px solid #abd1c6;
+}
+
+@keyframes slideUp{
+    from {
+        opacity: 0;
+        bottom: -100px;
+    }
+    to{
+        opacity: 1;
+        bottom: 0;
+    }
 }
 
 @media (max-width:1200px) {

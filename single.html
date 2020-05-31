@@ -23,13 +23,9 @@
         <nav>          
           <a href="index.html" class="header__button" data-text="Home">Home</a>
           <a href="gallery.html" class="header__button" data-text="Gallery">Gallery</a>
-          <a href="#" class="header__search">
-            <img src="img/search_desctop.png" alt="search">
-          </a>
-          <!-- <input type="search" placeholder="Search"> -->
         </nav>
         <div class="header__login">
-          <a href="#" class="header__button">Log In</a>
+          <a href="#" class="header__button" id="login">Log In</a>
           <!-- <a href="#" class="login__logo">
               <img src="img/login.png" alt="login">
           </a> -->
@@ -37,6 +33,22 @@
       </div>
     </div>
   </header>
+
+  <div class="popup">
+    <div id="popup-content">
+      <img src="img/login.svg" alt="User">
+      <input type="text" placeholder="Email">
+      <input type="text" placeholder="Username">
+      <input type="text" placeholder="Password">
+      <label for="">Registration complete</label>
+      <div class="popup__buttons">
+        <a href="#" id="login-button">log in</a>
+        <a href="#" id="registration-button">sign up</a>
+        <a href="#" id="reg-complete">complete</a>
+      </div>
+      <div class="close">+</div>
+    </div>
+  </div>
 
   <main>
     <div class="container">
@@ -50,18 +62,6 @@
             <div class="tea__name">Greenfield Spring melody</div>
             <div class="tea__description">Delicious astringency that is characteristic of expensive teas from India, spicy thyme and cool peppermint notes create unique bouquet of Greenfield Spring Melody that is light, bright and fresh as spring breath. Tender aroma reminiscent of fragrant grass odours underlines the original flavour.</div>
             <div class="tea__stats">
-              <!-- <ul class="tea__info__headers">
-                <li class="tea__categoty">Category:</li>
-                <li class="tea__country">Country:</li>
-                <li class="tea__rating">Rating:</li>
-                <li class="tea__price">Price:</li>
-              </ul>
-              <ul class="tea__info__values">
-                <li class="tea__categoty">Black tea</li>
-                <li class="tea__country">England</li>
-                <li class="tea__rating">4.5</li>
-                <li class="tea__price">2$</li>
-              </ul> -->
               <table>
                 <tr>
                   <th>Category</th>
@@ -128,6 +128,7 @@
     </div>
   </main>
 
+  <script src="js/login.js"></script>
 </body>
 
 </html>

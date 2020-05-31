@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/index_style.css">
   <title>Teamania</title>
 </head>
@@ -23,10 +22,6 @@
         <nav>          
           <a href="index.html" class="header__button" data-text="Home">Home</a>
           <a href="gallery.html" class="header__button" data-text="Gallery">Gallery</a>
-          <a href="#" class="header__search">
-            <img src="img/search_desctop.png" alt="search">
-          </a>
-          <!-- <input type="search" placeholder="Search"> -->
         </nav>
         <div class="header__login">
           <a href="#" class="header__button" id="login">Log In</a>
@@ -41,11 +36,14 @@
   <div class="popup">
     <div id="popup-content">
       <img src="img/login.svg" alt="User">
+      <input type="text" placeholder="Email">
       <input type="text" placeholder="Username">
       <input type="text" placeholder="Password">
+      <label for="">Registration complete</label>
       <div class="popup__buttons">
-        <a href="#" class="login__button">Login</a>
-        <a href="#" class="registration__button">Registration</a>
+        <a href="#" id="login-button">log in</a>
+        <a href="#" id="registration-button">sign up</a>
+        <a href="#" id="reg-complete">complete</a>
       </div>
       <div class="close">+</div>
     </div>

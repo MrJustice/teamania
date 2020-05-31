@@ -1,21 +1,27 @@
 document.getElementById('login').addEventListener('click',
 function() {
-    var images = document.querySelectorAll('.tea__image'),
-        bodyStyle = 'position: fixed; width: 100%; overflow-y: scroll;', i;
     document.querySelector('.popup').style.display = 'flex';
-    document.body.style.cssText = bodyStyle;
-    for (i = 0; i < images.length; ++i) {
-        images[i].style.opacity = '0.5';
-    }
 });
 
 document.querySelector('.close').addEventListener('click',
 function() {
-    var images = document.querySelectorAll('.tea__image'),
-        bodyStyle = 'position: fixed; width: 100%; overflow-y: scroll;', i;
     document.querySelector('.popup').style.display = 'none';
-    document.body.style.cssText = bodyStyle;
-    for (i = 0; i < images.length; ++i) {
-        images[i].style.opacity = '1';
-    }
+});
+
+document.getElementById('registration-button').addEventListener('click',
+function() {
+    document.querySelector('#popup-content input:nth-child(2)').style.display = 'block';
+    document.getElementById('login-button').style.display = 'none';
+    document.getElementById('registration-button').style.display = 'none';
+    document.getElementById('reg-complete').style.display = 'block';
+    document.querySelector('#popup-content label').style.display = 'none';
+});
+
+document.getElementById('reg-complete').addEventListener('click',
+function() {
+    document.getElementById('reg-complete').style.display = 'none';
+    document.getElementById('login-button').style.display = 'block';
+    document.getElementById('registration-button').style.display = 'block';
+    document.querySelector('#popup-content input:nth-child(2)').style.display = 'none';
+    document.querySelector('#popup-content label').style.display = 'block';
 });
