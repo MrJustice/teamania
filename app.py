@@ -1,9 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
@@ -13,8 +14,8 @@ def gallery():
     return render_template('gallery.html')
 
 
-@app.route('/<string:name>')
-def single_tea():
+@app.route('/<string:name>/<int:id>')
+def single_tea(name, id):
     return render_template('single.html')
 
 

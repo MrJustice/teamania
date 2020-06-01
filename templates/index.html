@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/index_style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index_style.css')}}">
   <title>Teamania</title>
 </head>
 
@@ -14,15 +14,15 @@
 
   <header>
     <div class="container">
-      <a href="index.html" class="header__logo">
-        <img src="img/logo_desctop.png" alt="">
+      <a href="index" class="header__logo">
+        <img src="{{ url_for('static', filename='images/logo_desctop.png') }}" alt="Big logo">
       </a>
       <div class="header__bottom">
         <div class="header__burger"><span></span></div>
         <nav>          
-          <a href="index.html" class="header__button">Home</a>
-          <a href="gallery.html" class="header__button" >Gallery</a>
-          <a href="add_tea.html" class="header__button">Add tea</a>
+          <a href="index" class="header__button">Home</a>
+          <a href="gallery" class="header__button" >Gallery</a>
+          <a href="add-tea" class="header__button">Add tea</a>
         </nav>
         <div class="header__login">
           <a href="#" class="header__button" id="login">Log In</a>
@@ -33,7 +33,7 @@
 
   <div class="popup">
     <div id="popup-content">
-      <img src="img/login.svg" alt="User">
+      <img src="{{ url_for('static', filename='images/login.svg') }}" alt="User">
       <input type="text" placeholder="Email">
       <input type="text" placeholder="Username">
       <input type="text" placeholder="Password">
@@ -350,7 +350,7 @@
     </div>
   </main>
 
-  <script src="js/login.js"></script>
+  <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 
 </html>
