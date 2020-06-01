@@ -50,7 +50,8 @@
 
   <main>
     <div class="container">
-      <section class="tea__section">
+      <form method="POST" class="tea__section">
+        
         <div class="main__information">
           <div id="tea-image">
             <input type="file" class="inputfile" id="file" onchange="previewFile()">
@@ -83,13 +84,13 @@
             </div>
           </div>
         </div>
+
         <div id="tea-description">
           <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
         </div>
 
         <button id="complete-button"><span>Add to gallery</span></button>
-      </section>
-
+      </form>
     </div>
   </main>
 
