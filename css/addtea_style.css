@@ -274,6 +274,7 @@ main .container {
 }
 
 .tea__info div input[type="text"] {
+    width: 50%;
     background: none;
     font-size: 20px;
     padding: .5% 1%;
@@ -366,7 +367,6 @@ main .container {
 #complete-button:hover {
     color: #fff;
     border-image-slice: 1;
-    /* border-image-source: linear-gradient(to left, #f9bc60, #abd1c6 , #004643); */
     animation: gradient 2s ease infinite;
 }
 
@@ -376,16 +376,19 @@ main .container {
     100% { background-position: 0% 50% }
 }
 
-@media (max-width:1200px) {
-    .container {
-        max-width: 970px;
-    }
-}
-
 @media (max-width:992px) {
     .container {
         max-width: 750px;
     }
+
+    .tea__info div input[type="text"] {
+        width: 75%;
+    }
+
+    #complete-button {
+        width: 40%;
+    }
+
 }
 
 @media (max-width:767px) {
@@ -399,7 +402,18 @@ main .container {
     }
 
     .header__bottom {
+        justify-content: space-between;
         flex-direction: row-reverse;
+    }
+
+    .header__button  {
+        font-size: 22px;
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    .header__button:first-child {
+        margin-left: 0;
     }
 
     .header__login {
@@ -407,7 +421,25 @@ main .container {
         z-index: 4;
     }
 
+    #popup-content {
+        width: 345px;
+        height: 300px;
+    }
+
+    #comment-popup {
+        width: 345px;
+        height: 175px;
+    }
+
+    .tea__info div input[type="text"] {
+        width: 120%;
+    }
+
     #tea-rating label {
         width: 15%;
+    }
+
+    #complete-button {
+        width: 80%;
     }
 }
