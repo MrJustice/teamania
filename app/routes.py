@@ -1,7 +1,5 @@
-from flask import Flask, render_template, url_for
-
-app = Flask(__name__)
-
+from app import app
+from flask import render_template, url_for
 
 @app.route('/')
 @app.route('/index')
@@ -22,7 +20,3 @@ def single_tea(name, id):
 @app.route('/add-tea')
 def add_tea():
     return render_template('add_tea.html')
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
