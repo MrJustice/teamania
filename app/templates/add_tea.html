@@ -50,7 +50,7 @@
 
   <main>
     <div class="container">
-      <form method="POST" class="tea__section">
+      <form action="" method="POST" class="tea__section" id="form">
         
         <div class="main__information">
           <div id="tea-image">
@@ -60,20 +60,24 @@
           </div>
           <div class="tea__info">
             <div id="tea-name">
-              <label for="">Name</label><br>
-              <input type="text">
+              <label for="title">Name</label><br>
+              <input type="text" name="Title" id="title" onfocusout="validateTitle()">
+              <span class="validation__text"></span>
             </div>
             <div id="tea-category">
-              <label for="">Category</label><br>
-              <input type="text">
+              <label for="type">Category</label><br>
+              <input type="text" name="Type" id="type" onfocusout="validateType()">
+              <span class="validation__text"></span>
             </div>
             <div id="tea-country">
-              <label for="">Country</label><br>
-              <input type="text">
+              <label for="country">Country</label><br>
+              <input type="text" name="Country" id="country" onfocusout="validateCountry()">
+              <span class="validation__text"></span>
             </div>
             <div id="tea-price">
-              <label for="">Price</label><br>
-              <input type="text">
+              <label for="price">Price</label><br>
+              <input type="text" name="Price" id="price" onfocusout="validatePrice()">
+              <span class="validation__text"></span>
             </div>
             <div id="tea-rating">
               <input type="radio" name="star" id="star1"><label for="star1"></label>
@@ -86,16 +90,19 @@
         </div>
 
         <div id="tea-description">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+          <textarea name="description" id="" cols="30" rows="10" placeholder="Description"></textarea>
+          <span class="validation__text"></span>
         </div>
 
-        <button id="complete-button"><span>Add to gallery</span></button>
+        <button type="submit" id="complete-button"><span>Add to gallery</span></button>
+        <span class="validatin__text"></span>
       </form>
     </div>
   </main>
 
   <script src="{{ url_for('static', filename='js/login.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/uploadimage.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/validateTea.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/uploadImage.js') }}"></script>
 </body>
 
 </html>

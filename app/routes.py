@@ -1,5 +1,6 @@
-from app import app
+from app import app, db
 from flask import render_template, url_for, request, redirect
+from app.models import *
 
 @app.route('/')
 @app.route('/index')
@@ -19,7 +20,8 @@ def single_tea(name, id):
 
 @app.route('/add-tea', methods=['POST', 'GET'])
 def add_tea():
-    if request == 'POST':
-        return redirect('/')
+    if request.method == 'POST':
+        
+        return redirect('/gallery')
     else:
         return render_template('add_tea.html')

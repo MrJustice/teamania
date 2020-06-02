@@ -527,8 +527,12 @@ input[type=range]::-webkit-slider-thumb {
     }
 
     input[type=range] {
-        left: 13.5%;
-        width: 73%;
+        left: 8%;
+        width: 84%;
+    }
+
+    .select__price {
+        width: 90%;
     }
 
     #top-five-results {

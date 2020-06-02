@@ -201,6 +201,12 @@ main .container {
     border: 4px solid #004643;
 }
 
+.validation__text {
+    height: 14px;
+    font-size: 14px;
+    padding-left: 2%;
+}
+
 .main__information {
     display: flex;
     justify-content: flex-start;
