@@ -13,8 +13,8 @@ def gallery():
     return render_template('gallery.html')
 
 
-@app.route('/<string:name>/<int:id>')
-def single_tea(name, id):
+@app.route('/single')
+def single_tea():
     return render_template('single.html')
 
 

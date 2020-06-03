@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main_style.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/addtea_style.css')}}">
   <title>Add new tea</title>
 </head>
@@ -25,7 +26,7 @@
           <a href="add-tea" class="header__button">Add tea</a>
         </nav>
         <div class="header__login">
-          <a href="#" class="header__button" id="login">Log In</a>
+          <button class="header__button" id="login">Log In</button>
         </div>
       </div>
     </div>
@@ -36,21 +37,21 @@
       <img src="{{ url_for('static', filename='images/login.svg') }}" alt="User">
       <input type="text" placeholder="Email">
       <input type="text" placeholder="Username">
-      <input type="text" placeholder="Password">
+      <input type="password" placeholder="Password">
       <label for="">Registration complete</label>
       <div class="popup__buttons">
         <button id="login-button"><span>log in</span></button>
         <button id="registration-button"><span>sign up</span></button>
         <button id="reg-complete"><span>complete</span></button>
       </div>
-      <div id="close-login">+</div>
+      <button id="close-login">+</button>
     </div>
     </div>
   </div>
 
   <main>
     <div class="container">
-      <form action="" method="POST" class="tea__section" id="form">
+      <form action="" method="POST" class="tea__section" id="add-tea-form">
         
         <div class="main__information">
           <div id="tea-image">

@@ -1,29 +1,34 @@
 document.getElementById('login').addEventListener('click',
 function() {
-    document.querySelector('.popup').style.display = 'flex';
-    document.querySelector('#popup-content').style.display = 'flex';
+    document.querySelector('.popup').classList.add('show');
+    document.getElementById('popup-content').classList.add('show');
+    document.getElementById('login-button').classList.remove('hide');
+    document.getElementById('registration-button').classList.remove('hide');
+    document.getElementById('reg-complete').classList.remove('show');
+    document.querySelector('#popup-content label').classList.remove('show');
+    document.querySelector('#popup-content input:nth-child(2)').classList.remove('show');
 });
 
 document.querySelector('#close-login').addEventListener('click',
 function() {
-    document.querySelector('.popup').style.display = 'none';
-    document.querySelector('#popup-content').style.display = 'none';
+    document.querySelector('.popup').classList.remove('show');
+    document.getElementById('popup-content').classList.remove('show');
 });
 
 document.getElementById('registration-button').addEventListener('click',
 function() {
-    document.querySelector('#popup-content input:nth-child(2)').style.display = 'block';
-    document.getElementById('login-button').style.display = 'none';
-    document.getElementById('registration-button').style.display = 'none';
-    document.getElementById('reg-complete').style.display = 'block';
-    document.querySelector('#popup-content label').style.display = 'none';
+    document.querySelector('#popup-content input:nth-child(2)').classList.add('show');
+    document.getElementById('login-button').classList.add('hide');
+    document.getElementById('registration-button').classList.add('hide');
+    document.getElementById('reg-complete').classList.add('show');
+    document.querySelector('#popup-content label').classList.remove('show');
 });
 
 document.getElementById('reg-complete').addEventListener('click',
 function() {
-    document.getElementById('reg-complete').style.display = 'none';
-    document.getElementById('login-button').style.display = 'block';
-    document.getElementById('registration-button').style.display = 'block';
-    document.querySelector('#popup-content input:nth-child(2)').style.display = 'none';
-    document.querySelector('#popup-content label').style.display = 'block';
+    document.getElementById('reg-complete').classList.remove('show');
+    document.getElementById('login-button').classList.remove('hide');
+    document.getElementById('registration-button').classList.remove('hide');
+    document.querySelector('#popup-content input:nth-child(2)').classList.remove('show');
+    document.querySelector('#popup-content label').classList.add('show');
 });
