@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const form = document.getElementById('add-tea-form');
 const title = document.getElementById('title');
 const type = document.getElementById('type');
 const country = document.getElementById('country');
@@ -15,7 +15,7 @@ function(event){
         validateCountry() &&
         validatePrice()
     ) {
-        form.submit();
+        return true;
     } else {
         event.preventDefault();
         return false;
