@@ -63,6 +63,7 @@
 }
 
 .tea__description {
+    height: 35%;
     color: #abd1c6;
     display: -webkit-box;
     -webkit-box-orient: vertical;

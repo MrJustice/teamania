@@ -29,6 +29,7 @@ class Tea(db.Model):
     description = db.Column(db.String(200))
     price = db.Column(db.Float, index=True, nullable=False)
     rating = db.Column(db.Float, index=True)
+    image = db.Column(db.String(150))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     comments = db.relationship('Comment', backref='tea', lazy='dynamic')

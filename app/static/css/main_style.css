@@ -101,6 +101,13 @@ nav a:hover::after, .header__login button:hover::after {
     animation: slideUp .3s ease-in-out;
 }
 
+form#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #popup-content.show {
     display: flex;
 }

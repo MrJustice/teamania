@@ -95,6 +95,7 @@ main .container {
     width: 50%;
     background: none;
     font-size: 20px;
+    text-transform: capitalize;
     padding: .5% 1%;
     border: none;
     border-bottom: 3px solid #004643;

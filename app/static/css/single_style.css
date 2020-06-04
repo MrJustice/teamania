@@ -18,6 +18,12 @@
     display: flex;
 }
 
+form#comment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #comment-button {
     color: #004643;
     border: 0;
@@ -86,6 +92,7 @@ main .container {
 
 .tea__info {
     display: flex;
+    justify-content: space-between;
     width: 80%;
     flex-direction: column;
 }
@@ -102,10 +109,15 @@ main .container {
     text-indent: 5%;
     line-height: 22px;
     font-size: 24px;
-    margin: 3% auto 1%;
+    margin: 0 auto;
     padding-bottom: 1%;
     color: #0f3433;
 }
+
+/* .tea__stats {
+    border-top: 4px solid #004643;
+    border-left: 4px solid #004643;
+} */
 
 .tea__stats table {
     width: 90%;
@@ -125,8 +137,6 @@ main .container {
 .tea__stats table tr td {
     padding-top: 1%;
 }
-
-
 
 .tea__stats table tr:last-child {
     color: #004643;
@@ -281,7 +291,8 @@ main .container {
         flex-direction: column;
     }
 
-    .tea__image, .tea__info {
+    .tea__image,
+    .tea__info {
         display: flex;
         justify-content: center;
         width: 100%;
