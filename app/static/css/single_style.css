@@ -168,6 +168,11 @@ main .container {
 
 .comment {
     display: flex;
+    width: 80%;
+}
+
+.comment__text {
+    padding-left: 1%;
 }
 
 .rating__section {
@@ -183,7 +188,21 @@ main .container {
 }
 
 #self-rating {
+    background: none;
+    border: none;
     font-size: 20px;
+    color: #0f3433;
+    cursor: pointer;
+    font-family: 'Acme', 'PT Serif', serif;
+}
+
+#self-rating::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: .5px;
+    background-color: #004643;
 }
 
 #self-stars {
@@ -201,7 +220,7 @@ main .container {
 #self-stars label {
     display: block;
     cursor: pointer;
-    width: 10%;
+    width: 20%;
     margin-right: 2%;
 }
 

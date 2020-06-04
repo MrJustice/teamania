@@ -2,6 +2,10 @@ from app import app, db
 from flask import render_template, url_for, request, redirect
 from app.models import *
 
+
+def to_fixed(val, digits):
+    return f'{val:.{digits}f}'
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -19,7 +23,25 @@ def gallery():
 @app.route('/gallery/<int:id>')
 def single(id):
     tea = Tea.query.get(id)
-    return render_template('single.html', tea=tea)
+    comments = tea.comments
+    return render_template('single.html', tea=tea, comments=comments)
+
+
+@app.route('/gallery/<int:id>/comment', methods=['POST'])
+def comment(id):
+    tea = Tea.query.get(id)
+    comments = tea.comments
+    rating = request.form['star']
+    body = request.form['comment-body']
+    comment = Comment(rating=rating, body=body, tea_id=tea.id)
+    avg_rating = (sum([x.rating for x in comments]) + int(comment.rating)) / (comments.count()+1)
+    tea.rating = to_fixed(avg_rating, 2)
+    try:
+        db.session.add(comment)
+        db.session.commit()
+    except:
+        return 'Cant add comment'
+    return render_template('single.html', tea=tea, comments=comments)
 
 
 @app.route('/add-tea', methods=['POST', 'GET'])
@@ -38,7 +60,6 @@ def add_tea():
             return redirect('/gallery')
         except:
             return 'Something went wrong'
-        print(request.form)
         return redirect('/gallery')
     else:
         return render_template('add_tea.html')

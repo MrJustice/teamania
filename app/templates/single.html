@@ -51,10 +51,16 @@
     </div>
 
     <div id="comment-popup">
-      <div id="new-comment-stars">1-5 stars here</div>
-      <form action="" method="post" id="comment-form">
-        <textarea placeholder="Your comment here..." cols="30" rows="5"></textarea>
-        <button id="comment-button"><span>leave comment</span></button>
+      <form action="{{ url_for('comment', id=tea.id) }}" method="POST" id="comment-form">
+        <div id="self-stars">
+          <input type="radio" name="star" id="star1" value="5"><label for="star1"></label>
+          <input type="radio" name="star" id="star2" value="4"><label for="star2"></label>
+          <input type="radio" name="star" id="star3" value="3"><label for="star3"></label>
+          <input type="radio" name="star" id="star4" value="2"><label for="star4"></label>
+          <input type="radio" name="star" id="star5" value="1"><label for="star5"></label>
+        </div>
+        <textarea placeholder="Your comment here..." cols="30" rows="5" name="comment-body"></textarea>
+        <button type="submit" id="comment-button"><span>leave comment</span></button>
       </form>
       <button id="close-comment">+</button>
     </div>
@@ -92,27 +98,15 @@
       <section class="feedback__section">
         <article class="comment__section">
           <ul id="comment-list">
+            {% for comment in comments: %}
             <li id="comment-item">
               <div class="comment">
-                <div class="comment__author">Kiselev Artem:</div>
-                <div class="comment__text">Well, its pretty tasty.</div>
+                <div class="comment__author">Ura:</div>
+                <div class="comment__text">{{ comment.body }}</div>
               </div>
-              <div class="comment__rating">R: 4.5</div>
+              <div class="comment__rating">R: {{ comment.rating }}</div>
             </li>
-            <li id="comment-item">
-              <div class="comment">
-                <div class="comment__author">Kiselev Artem:</div>
-                <div class="comment__text">Well, its pretty tasty.</div>
-              </div>
-              <div class="comment__rating">R: 4.5</div>
-            </li>
-            <li id="comment-item">
-              <div class="comment">
-                <div class="comment__author">Kiselev Artem:</div>
-                <div class="comment__text">Well, its pretty tasty.</div>
-              </div>
-              <div class="comment__rating">R: 4.5</div>
-            </li>
+            {% endfor %}
           </ul>
         </article>
         <article class="rating__section">
@@ -122,16 +116,8 @@
             </div>
           </div>
           <div class="your__rating">
-            <div id="self-rating">Add your own rating</div>
-            <div id="self-stars">
-              <input type="radio" name="star" id="star1"><label for="star1"></label>
-              <input type="radio" name="star" id="star2"><label for="star2"></label>
-              <input type="radio" name="star" id="star3"><label for="star3"></label>
-              <input type="radio" name="star" id="star4"><label for="star4"></label>
-              <input type="radio" name="star" id="star5"><label for="star5"></label>
-            </div>
+            <button id="self-rating">Add your own rating</button>
           </div>
-
         </article>
       </section>
 
