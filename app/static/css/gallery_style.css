@@ -130,6 +130,11 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
+.gallery__section {
+    display: flex;
+    flex-direction: column;
+}
+
 .headline {
     display: flex;
     justify-content: center;
@@ -141,6 +146,7 @@ input[type=range]::-webkit-slider-thumb {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 397px;
 }
 
 .tea__card {

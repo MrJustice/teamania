@@ -1,10 +1,17 @@
 from app import app, db
+from flask_login import current_user, login_user
 from flask import render_template, url_for, request, redirect
 from app.models import *
 
 
 def to_fixed(val, digits):
     return f'{val:.{digits}f}'
+
+
+def check_user_status(page):
+    if current_user.is_authenticated:
+        return redirect(url_for(page))
+
 
 
 @app.route('/')
