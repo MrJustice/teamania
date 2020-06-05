@@ -22,22 +22,6 @@ def index():
     return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)
 
 
-@app.route('/login')
-@app.route('/index/login')
-def login():
-    teas_by_rating = Tea.query.order_by(Tea.rating.desc()).limit(5).all()
-    teas_by_date = Tea.query.order_by(Tea.timestamp.desc()).limit(10).all()
-    return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)
-
-
-@app.route('/registration')
-@app.route('/index/registration')
-def registration():
-    teas_by_rating = Tea.query.order_by(Tea.rating.desc()).limit(5).all()
-    teas_by_date = Tea.query.order_by(Tea.timestamp.desc()).limit(10).all()
-    return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)
-
-
 @app.route('/gallery')
 def gallery():
     teas = Tea.query.order_by(Tea.title).all();
@@ -87,3 +71,16 @@ def add_tea():
         return redirect('/gallery')
     else:
         return render_template('add_tea.html')
+
+
+@app.route('/login', methods=['POST', 'GET'])
+@app.route('/<string:url>/login', methods=['POST', 'GET'])
+def login(url):
+    pass
+
+
+@app.route('/registration', methods=['POST', 'GET'])
+@app.route('/<string:url>/registration', methods=['POST', 'GET'])
+def registration(url):
+    
+    pass

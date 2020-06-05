@@ -90,16 +90,3 @@ function checkIfOnlyNumbers(field){
         return false;
     }
 }
-
-function meetLenght(field, minLenght, maxLenght){
-    if(field.value.lenght >= minLenght && field.value.lenght <= maxLenght){
-        setValid(field);
-        return true;
-    } else if(field.value.lenght <= minLenght){
-        setInvalid(field, `${field.name} must be at least ${minLenght} characters long`)
-        return false;
-    } else {
-        setInvalid(field, `${field.name} must be shorter then ${minLenght} characters`)
-        return false;
-    }
-}

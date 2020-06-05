@@ -101,8 +101,12 @@ nav a:hover::after, .header__login button:hover::after {
     animation: slideUp .3s ease-in-out;
 }
 
-form#login-form {
+#popup-content.show {
     display: flex;
+}
+
+form#login-form {
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -120,10 +124,6 @@ form#reg-form {
 }
 
 form#reg-form.show {
-    display: flex;
-}
-
-#popup-content.show {
     display: flex;
 }
 
@@ -168,9 +168,14 @@ form#reg-form.show {
     position: relative;
 }
 
+form#reg-form .popup__buttons {
+    justify-content: center;
+}
+
 #login-button,
 #registration-button,
-#reg-complete {
+#reg-complete,
+#reg-back {
     display: block;
     color: #004643;
     border: 0;
@@ -180,25 +185,10 @@ form#reg-form.show {
     text-transform: capitalize;
 }
 
-#reg-complete {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-#login-button.hide,
-#registration-button.hide {
-    display: none;
-}
-
-#reg-complete.show {
-    display: block;
-}
-
 #login-button::after,
 #registration-button::after,
-#reg-complete::after {
+#reg-complete::after,
+#reg-back::after {
     content: '';
     display: block;
     width: 0;
@@ -210,8 +200,24 @@ form#reg-form.show {
 
 #login-button:hover::after,
 #registration-button:hover::after,
-#reg-complete:hover::after{
+#reg-complete:hover::after,
+#reg-back:hover::after{
     width: 100%;
+}
+
+.validation__text {
+    display: inline;
+    font-size: 10px;
+    padding-left: 1%;
+}
+
+form#pswdStrength{
+    padding: 1%;
+    transition: 1s;
+    margin-top: 2%;
+    text-align: center;
+    border-radius: 20px;
+    text-transform: uppercase;
 }
 
 #close-login {

@@ -35,15 +35,25 @@
   <div class="popup">
     <div id="popup-content">
       <img src="{{ url_for('static', filename='images/login.svg') }}" alt="User">
-      <form method="post" id="login-form">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
-        <label for="">Registration complete</label>
+      <form action="" method="post" id="login-form">
+        <input type="text" placeholder="Username" id="login-username">
+        <span class="validation__text"></span>
+        <input type="password" placeholder="Password" id="login-password">
+        <span class="validation__text"></span>
         <div class="popup__buttons">
           <button type="submit" id="login-button"><span>log in</span></button>
           <button type="button" id="registration-button"><span>sign up</span></button>
-          <button type="submit" id="reg-complete"><span>complete</span></button>
+        </div>
+      </form>
+      <form action="" method="post" id="reg-form">
+        <input type="text" placeholder="Email" id="reg-email" onfocusout="validateRegEmail()">
+        <span class="validation__text"></span>
+        <input type="text" placeholder="Username" id="reg-username">
+        <input type="password" placeholder="Password" id="reg-password" onkeyup="strength(this.value)">
+        <span id="pswdStrength"></span>
+        <label>Registration complete</label>
+        <div class="popup__buttons">
+          <button type="submit" id="reg-complete"><span>Registration</span></button>
         </div>
       </form>
       <button id="close-login">+</button>
