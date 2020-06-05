@@ -105,25 +105,17 @@ nav a:hover::after, .header__login button:hover::after {
     display: flex;
 }
 
-form#login-form {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-form#login-form.show {
-    display: flex;
-}
-
+form#login-form,
 form#reg-form {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 120%;
 }
 
-form#reg-form.show {
+form#login-form.show,
+form#reg-form.show{
     display: flex;
 }
 
@@ -169,6 +161,7 @@ form#reg-form.show {
 }
 
 form#reg-form .popup__buttons {
+    margin-top: 1%;
     justify-content: center;
 }
 
@@ -207,16 +200,16 @@ form#reg-form .popup__buttons {
 
 .validation__text {
     display: inline;
-    font-size: 10px;
+    font-size: 12px;
     padding-left: 1%;
 }
 
-form#pswdStrength{
-    padding: 1%;
+form #pswdStrength{
+    padding: 0;
+    margin-top: 1%;
     transition: 1s;
-    margin-top: 2%;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     text-transform: uppercase;
 }
 

@@ -122,7 +122,7 @@ function matchWithRegexp(field){
         setValid(field);
         return true;
     } else {
-        setInvalid(field, `${field.name} incorrectly set`);
+        setInvalid(field, `Email incorrectly set`);
         return false
     }
 }
