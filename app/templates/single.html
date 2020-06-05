@@ -16,7 +16,7 @@
 
   <header>
     <div class="container">
-      <a href="index" class="header__logo">
+      <a href="{{ url_for('index') }}" class="header__logo">
         <img src="{{ url_for('static', filename='images/logo_desctop.png') }}" alt="Big logo">
       </a>
       <div class="header__bottom">
@@ -72,7 +72,13 @@
       <section class="tea__section">
         <article class="main__information">
           <div class="tea__image">
-            <img src="{{ url_for('static', filename='images/blacktea.png')}}" alt="spring melody">
+            {% if tea.type == 'Black' %}
+              <img src="{{ url_for('static', filename='images/blacktear.png')}}" alt="black tea">
+            {% elif tea.type == 'Green' %}
+              <img src="{{ url_for('static', filename='images/greentear.png')}}" alt="green tea">
+            {% else %}
+              <img src="{{ url_for('static', filename='images/othertear.png')}}" alt="other tea">
+            {% endif %}
           </div>
           <div class="tea__info">
             <h2 class="tea__name">{{ tea.title }}</h2>
@@ -97,23 +103,25 @@
       
       <section class="feedback__section">
         <article class="comment__section">
-          <ul id="comment-list">
-            {% for comment in comments: %}
-            <li id="comment-item">
-              <div class="comment">
-                <div class="comment__author">Ura:</div>
-                <div class="comment__text">{{ comment.body }}</div>
-              </div>
-              <div class="comment__rating">R: {{ comment.rating }}</div>
-            </li>
-            {% endfor %}
-          </ul>
+          {% if comments.count() == 0 %}
+            <p class="empty__comments">No one still commented it</p>
+          {% else %}
+            <ul id="comment-list">
+              {% for comment in comments: %}
+              <li id="comment-item">
+                <div class="comment">
+                  <div class="comment__author">Ura:</div>
+                  <div class="comment__text">{{ comment.body }}</div>
+                </div>
+                <div class="comment__rating">R: {{ comment.rating }}</div>
+              </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </article>
         <article class="rating__section">
           <div class="average">
             <div id="average-rating">Rating: {{ tea.rating }}</div>
-            <div id="average-stars">
-            </div>
           </div>
           <div class="your__rating">
             <button id="self-rating">Add your own rating</button>
