@@ -39,7 +39,6 @@ form div p {
 
 .price__labels {
     display: flex;
-    /* flex-direction: column; */
     width: 92%;
     margin: 1.5% auto 0;
     justify-content: space-between;
@@ -207,7 +206,8 @@ input[type=range]::-webkit-slider-thumb {
 .tea__stats {
     color: #f9bc60;
     width: 33.3%;
-    padding-bottom: 5px auto;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .country {

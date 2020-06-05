@@ -108,6 +108,21 @@ form#login-form {
     align-items: center;
 }
 
+form#login-form.show {
+    display: flex;
+}
+
+form#reg-form {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form#reg-form.show {
+    display: flex;
+}
+
 #popup-content.show {
     display: flex;
 }

@@ -82,7 +82,8 @@
 .tea__stats {
     color: #f9bc60;
     width: 33.3%;
-    padding-bottom: 5px auto;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .country {

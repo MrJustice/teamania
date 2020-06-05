@@ -6,9 +6,26 @@ from app.models import *
 def to_fixed(val, digits):
     return f'{val:.{digits}f}'
 
+
 @app.route('/')
 @app.route('/index')
 def index():
+    teas_by_rating = Tea.query.order_by(Tea.rating.desc()).limit(5).all()
+    teas_by_date = Tea.query.order_by(Tea.timestamp.desc()).limit(10).all()
+    return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)
+
+
+@app.route('/login')
+@app.route('/index/login')
+def login():
+    teas_by_rating = Tea.query.order_by(Tea.rating.desc()).limit(5).all()
+    teas_by_date = Tea.query.order_by(Tea.timestamp.desc()).limit(10).all()
+    return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)
+
+
+@app.route('/registration')
+@app.route('/index/registration')
+def registration():
     teas_by_rating = Tea.query.order_by(Tea.rating.desc()).limit(5).all()
     teas_by_date = Tea.query.order_by(Tea.timestamp.desc()).limit(10).all()
     return render_template('index.html', teas_by_rating=teas_by_rating, teas_by_date=teas_by_date)

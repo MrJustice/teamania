@@ -105,11 +105,11 @@
           <li class="tea__card">
             <div class="tea__image">
               {% if tea.type == 'Black' %}
-                <img src="{{ url_for('static', filename='images/blacktea.png')}}" alt="black tea">
+                <img src="{{ url_for('static', filename='images/blacktear.png')}}" alt="black tea">
               {% elif tea.type == 'Green' %}
-                <img src="{{ url_for('static', filename='images/greentea.png')}}" alt="green tea">
+                <img src="{{ url_for('static', filename='images/greentear.png')}}" alt="green tea">
               {% else %}
-                <img src="{{ url_for('static', filename='images/othertea.png')}}" alt="other tea">
+                <img src="{{ url_for('static', filename='images/othertear.png')}}" alt="other tea">
               {% endif %}
             </div>
             <div class="tea__name"><a href="gallery/{{ tea.id }}">{{ tea.title }}</a></div>
