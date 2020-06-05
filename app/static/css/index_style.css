@@ -70,6 +70,7 @@
     -webkit-line-clamp: 7;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0;
 }
 
 .tea__info {
@@ -222,7 +223,8 @@
         margin: 6% auto 2%;
     }
 
-    #top-five-results {
+    #top-five-results,
+    #last-ten-results {
         flex-direction: column;
     }
 
